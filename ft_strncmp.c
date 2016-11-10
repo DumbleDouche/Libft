@@ -6,7 +6,7 @@
 /*   By: rchoquer <rchoquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 21:12:21 by rchoquer          #+#    #+#             */
-/*   Updated: 2016/11/10 19:37:26 by rchoquer         ###   ########.fr       */
+/*   Updated: 2016/11/10 21:02:02 by rchoquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,5 @@ int		ft_strncmp(const char *str1, const char *str2, size_t n)
 		++str1;
 		++str2;
 	}
-	if ((unsigned char)*str1 > (unsigned char)*str2)
-		return (1);
-	else if ((unsigned char)*str1 < (unsigned char)*str2)
-		return (-1);
-	else
-		return (0);
+	return ((unsigned char)*str1 - (unsigned char)*str2);
 }
