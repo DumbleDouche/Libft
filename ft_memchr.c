@@ -6,7 +6,7 @@
 /*   By: rchoquer <rchoquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 20:48:35 by rchoquer          #+#    #+#             */
-/*   Updated: 2016/11/09 04:10:46 by rchoquer         ###   ########.fr       */
+/*   Updated: 2016/11/10 18:42:22 by rchoquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 void	*ft_memchr(const void *str, int c, size_t n)
 {
-	unsigned char	*haystack;
+	unsigned char	*ret;
 
 	if (!str)
 		return ((void *)0);
-	haystack = (unsigned char *)str;
+	ret = (unsigned char *)str;
 	while (n--)
 	{
-		if (*haystack == (unsigned char)c)
-			return (haystack);
-		++haystack;
+		if (*ret == (unsigned char)c)
+			return (ret);
+		++ret;
 	}
 	return (NULL);
 }

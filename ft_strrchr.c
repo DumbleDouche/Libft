@@ -6,7 +6,7 @@
 /*   By: rchoquer <rchoquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 22:56:58 by rchoquer          #+#    #+#             */
-/*   Updated: 2016/11/09 03:50:46 by rchoquer         ###   ########.fr       */
+/*   Updated: 2016/11/10 19:43:19 by rchoquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,12 @@ char	*ft_strrchr(const char *str, int c)
 	last = 0;
 	if (!str)
 		return (NULL);
+	if (!(*str))
+		return ((char *)str);
 	while (str[i++])
 		if (str[i] == (unsigned char)c)
 			last = i;
 	if (last)
-		return ((char *)&str[last]);
+		return ((char *)(str + last));
 	return (NULL);
 }
