@@ -6,7 +6,7 @@
 /*   By: rchoquer <rchoquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 04:07:17 by rchoquer          #+#    #+#             */
-/*   Updated: 2016/11/09 22:22:36 by rchoquer         ###   ########.fr       */
+/*   Updated: 2016/11/12 17:55:07 by rchoquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ int			ft_atoi(const char *str)
 
 	sign = 1;
 	res = 0;
-	if (!str)
-		return (0);
 	while (*str == '\t' || *str == '\n' || *str == '\r'
 	|| *str == '\v' || *str == '\f' || *str == ' ')
 	{

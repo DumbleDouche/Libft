@@ -6,7 +6,7 @@
 /*   By: rchoquer <rchoquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 03:33:52 by rchoquer          #+#    #+#             */
-/*   Updated: 2016/11/09 02:15:13 by rchoquer         ###   ########.fr       */
+/*   Updated: 2016/11/12 17:58:14 by rchoquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,7 @@ void	ft_bzero(void *s, size_t n)
 {
 	char	*ret;
 
-	ret = NULL;
-	if (!s)
-		return ;
-	if (s || n > 0)
-	{
-		ret = s;
-		while (n--)
-			*ret++ = '\0';
-	}
+	ret = s;
+	while (n--)
+		*ret++ = '\0';
 }

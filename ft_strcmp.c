@@ -6,14 +6,12 @@
 /*   By: rchoquer <rchoquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 04:51:26 by rchoquer          #+#    #+#             */
-/*   Updated: 2016/11/11 03:49:20 by rchoquer         ###   ########.fr       */
+/*   Updated: 2016/11/12 18:07:10 by rchoquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_strcmp(const char *s1, const char *s2)
 {
-	if (!s1 || !s2)
-		return (0);
 	while (*s1 && *s2 && *s1 == *s2)
 	{
 		++s1;

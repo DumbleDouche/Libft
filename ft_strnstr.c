@@ -6,7 +6,7 @@
 /*   By: rchoquer <rchoquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 16:24:40 by rchoquer          #+#    #+#             */
-/*   Updated: 2016/11/10 20:34:33 by rchoquer         ###   ########.fr       */
+/*   Updated: 2016/11/12 20:45:31 by rchoquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,16 @@
 
 char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
-	size_t		i;
-	size_t		j;
+	size_t		s2len;
 
-	i = 0;
-	j = 0;
-	if (!s1 || !(*s1) || !s2)
-		return ((void*)0);
-	if (s1 == s2 || !(*s2))
+	if (!*s2)
 		return ((char *)s1);
-	if (n < ft_strlen(s2))
-		return ((void *)0);
-	while (s1[i] && (s1 + i) >= (s2 + i) && i < n)
+	s2len = ft_strlen(s2);
+	while (*s1 && n-- >= s2len)
 	{
-		while (s1[i + j] && s2[j] && s1[i + j] == s2[j] && j + i < n)
-			j++;
-		if (s2[j] == '\0')
-			return ((char *)(s1 + i));
-		j = 0;
-		i++;
+		if (*s1 == *s2 && ft_memcmp(s1, s2, s2len) == 0)
+			return ((char *)s1);
+		s1++;
 	}
-	return ((void*)0);
+	return (NULL);
 }

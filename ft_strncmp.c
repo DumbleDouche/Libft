@@ -6,7 +6,7 @@
 /*   By: rchoquer <rchoquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 21:12:21 by rchoquer          #+#    #+#             */
-/*   Updated: 2016/11/11 03:45:31 by rchoquer         ###   ########.fr       */
+/*   Updated: 2016/11/12 18:09:21 by rchoquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_strncmp(const char *str1, const char *str2, size_t n)
 {
-	if (!str1 || !str2 || !n)
+	if (!n)
 		return (0);
 	while (*str1 && *str2 && *str1 == *str2 && n--)
 	{

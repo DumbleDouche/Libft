@@ -6,7 +6,7 @@
 /*   By: rchoquer <rchoquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 04:50:59 by rchoquer          #+#    #+#             */
-/*   Updated: 2016/11/09 23:42:40 by rchoquer         ###   ########.fr       */
+/*   Updated: 2016/11/12 19:26:10 by rchoquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,16 @@
 char	*ft_strcat(char *dest, const char *src)
 {
 	char	*ret;
-	size_t	len;
 
-	if (!dest || !src)
-		return (NULL);
-	len = ft_strlen(src);
 	ret = dest;
-	while (*ret)
-		ret++;
-	while (len-- && *src)
+	while (*dest)
+		dest++;
+	while (*src)
 	{
-		*ret = *src;
+		*dest = *src;
 		src++;
-		ret++;
+		dest++;
 	}
-	*ret = '\0';
-	return (dest);
+	*dest = '\0';
+	return (ret);
 }
