@@ -6,22 +6,27 @@
 /*   By: rchoquer <rchoquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 21:12:21 by rchoquer          #+#    #+#             */
-/*   Updated: 2016/11/12 18:09:21 by rchoquer         ###   ########.fr       */
+/*   Updated: 2016/11/13 18:21:58 by rchoquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-int		ft_strncmp(const char *str1, const char *str2, size_t n)
+int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
+	const char	*s1c;
+	const char	*s2c;
+
+	s1c = s1;
+	s2c = s2;
 	if (!n)
 		return (0);
-	while (*str1 && *str2 && *str1 == *str2 && n--)
+	while (*s1c && *s2c && *s1c == *s2c && n--)
 	{
-		if ((*str1 == '\0') || (*str2 == '\0') || !n)
-			return ((unsigned char)*str1 - (unsigned char)*str2);
-		++str1;
-		++str2;
+		if ((*s1c == '\0') || (*s2c == '\0') || !n)
+			return ((unsigned char)*s1c - (unsigned char)*s2c);
+		++s1c;
+		++s2c;
 	}
-	return ((unsigned char)*str1 - (unsigned char)*str2);
+	return ((unsigned char)*s1c - (unsigned char)*s2c);
 }

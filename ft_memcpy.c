@@ -6,7 +6,7 @@
 /*   By: rchoquer <rchoquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 03:51:24 by rchoquer          #+#    #+#             */
-/*   Updated: 2016/11/12 17:58:36 by rchoquer         ###   ########.fr       */
+/*   Updated: 2016/11/13 17:49:39 by rchoquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_memcpy(void *str1, const void *str2, size_t n)
 {
-	char		*dest;
-	const char	*src;
+	unsigned char		*dest;
+	unsigned const char	*src;
 
 	dest = str1;
 	src = str2;

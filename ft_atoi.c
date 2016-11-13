@@ -6,7 +6,7 @@
 /*   By: rchoquer <rchoquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 04:07:17 by rchoquer          #+#    #+#             */
-/*   Updated: 2016/11/12 17:55:07 by rchoquer         ###   ########.fr       */
+/*   Updated: 2016/11/13 18:21:52 by rchoquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,26 @@ int			ft_atoi(const char *str)
 {
 	long		res;
 	int			sign;
+	char		*strc;
 
+	strc = (char *)str;
 	sign = 1;
 	res = 0;
-	while (*str == '\t' || *str == '\n' || *str == '\r'
-	|| *str == '\v' || *str == '\f' || *str == ' ')
+	while (*strc == '\t' || *strc == '\n' || *strc == '\r'
+	|| *strc == '\v' || *strc == '\f' || *strc == ' ')
 	{
-		str++;
+		strc++;
 	}
-	if (*str == '-' || *str == '+')
+	if (*strc == '-' || *strc == '+')
 	{
-		if (*str == '-')
+		if (*strc == '-')
 			sign = -1;
-		str++;
+		strc++;
 	}
-	while (*str >= '0' && *str <= '9')
+	while (*strc >= '0' && *strc <= '9')
 	{
-		res = res * 10 + (int)(*str - 48);
-		str++;
+		res = res * 10 + (int)(*strc - 48);
+		strc++;
 	}
 	return (res * sign);
 }
