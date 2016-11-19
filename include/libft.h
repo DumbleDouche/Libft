@@ -6,7 +6,7 @@
 /*   By: rchoquer <rchoquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 04:08:10 by rchoquer          #+#    #+#             */
-/*   Updated: 2016/11/15 21:30:33 by rchoquer         ###   ########.fr       */
+/*   Updated: 2016/11/19 01:50:51 by rchoquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void				*ft_memset(void *str, int c, size_t n);
 void				*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void				*ft_memchr(const void *str, int c, size_t n);
 void				*ft_memset(void *s, int c, size_t n);
+void				ft_putnstr(const char *string, size_t size);
 int					ft_tolower(int c);
 int					ft_strnequ(char const *s1, char const *s2, size_t n);
 int					ft_toupper(int c);
