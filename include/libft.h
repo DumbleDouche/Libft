@@ -6,7 +6,7 @@
 /*   By: rchoquer <rchoquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 04:08:10 by rchoquer          #+#    #+#             */
-/*   Updated: 2016/11/19 01:50:51 by rchoquer         ###   ########.fr       */
+/*   Updated: 2016/11/23 03:39:44 by rchoquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void				ft_strdel(char **ap);
 void				ft_striter(char *s, void (*f)(char *));
 void				ft_memdel(void **ap);
 void				ft_putendl_fd(char const *s, int fd);
+void				ft_putnstr(const char *string, size_t size);
 void				*ft_memcpy(void *str1, const void *str2, size_t n);
 void				*ft_memalloc(size_t size);
 void				*ft_memmove(void *str1, const void *str2, size_t n);
@@ -48,7 +49,6 @@ void				*ft_memset(void *str, int c, size_t n);
 void				*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void				*ft_memchr(const void *str, int c, size_t n);
 void				*ft_memset(void *s, int c, size_t n);
-void				ft_putnstr(const char *string, size_t size);
 int					ft_tolower(int c);
 int					ft_strnequ(char const *s1, char const *s2, size_t n);
 int					ft_toupper(int c);
@@ -63,7 +63,6 @@ int					ft_isascii(int c);
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
 int					ft_memcmp(const void *str1, const void *str2, size_t n);
-char				*ft_strchr(const char *str, int c);
 char				*ft_strchr(const char *str, int c);
 char				*ft_strrchr(const char *str, int c);
 char				*ft_strstr(const char *haystack, const char *needle);
