@@ -6,7 +6,7 @@
 /*   By: rchoquer <rchoquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 04:52:56 by rchoquer          #+#    #+#             */
-/*   Updated: 2016/11/12 19:04:10 by rchoquer         ###   ########.fr       */
+/*   Updated: 2016/11/26 04:10:55 by rchoquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strdup(const char *s)
 	i = 0;
 	while (s[i])
 		i++;
-	if (!(dest = (char *)malloc((i + 1) * sizeof(*dest))))
+	if (!(dest = (char *)malloc((i + 1) * sizeof(dest))))
 		return (NULL);
 	i = 0;
 	while (s[i])
