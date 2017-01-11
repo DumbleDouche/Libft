@@ -6,11 +6,12 @@
 #    By: rchoquer <rchoquer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/05 04:09:13 by rchoquer          #+#    #+#              #
-#    Updated: 2017/01/11 18:23:33 by rchoquer         ###   ########.fr        #
+#    Updated: 2017/01/11 19:47:14 by rchoquer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=	libft.a
+PROJECT			=	LIBFT
 
 CC				=	gcc
 CFLAGS			=	-Wall -Wextra -Werror
@@ -40,28 +41,17 @@ SRC				=	$(addprefix $(SRC_PATH)/,$(SRC_NAME))
 OBJ				=	$(addprefix $(OBJ_PATH)/,$(OBJ_NAME))
 INC				=	$(addprefix $(INC_PATH)/,$(INC_NAME))
 
-# COLORS
-C_NO			=	"\033[00m"
-C_OK			=	"\033[32m"
-C_GOOD			=	"\033[32m"
-C_ERROR			=	"\033[31m"
-C_WARN			=	"\033[33m"
-
-# DBG MESSAGE
-SUCCESS			=	$(C_GOOD)SUCCESS$(C_NO)
-OK				=	$(C_OK)OK$(C_NO)
-
 .PHONY: clean all re fclean
 
 all: $(OBJ_PATH) $(NAME)
 
 $(NAME): $(OBJ)
-	@echo "Compiling & indexing" [ $(NAME) ] $(SUCCESS)
 	@ar rc $@ $^
 	@ranlib $@
+	@echo $(PROJECT) "\033[32mBuilt library\033[0m"
 
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c
-	@$(CC) -c $(CPPFLAGS) -o $@ $^ $(CFLAGS)
+	@$(CC) $(CPPFLAGS) -o $@ -c $^ $(CFLAGS)
 
 $(OBJ_PATH):
 	@mkdir -p $(OBJ_PATH) 2> /dev/null
@@ -69,10 +59,11 @@ $(OBJ_PATH):
 clean:
 	@rm -f $(OBJ)
 	@rmdir $(OBJ_PATH) 2> /dev/null || true
-	@echo "Delete" [ $(NAME) ] $(OK)
+	@echo $(PROJECT) "\033[93mCleaned up object files\033[0m"
 
 fclean: clean
 	@rm -f $(NAME)
+	@echo $(PROJECT) "\033[91mCleaned up compiled files\033[0m"
 
 re: fclean all
 
