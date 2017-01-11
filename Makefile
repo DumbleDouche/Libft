@@ -6,7 +6,7 @@
 #    By: rchoquer <rchoquer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/05 04:09:13 by rchoquer          #+#    #+#              #
-#    Updated: 2016/11/19 01:51:06 by rchoquer         ###   ########.fr        #
+#    Updated: 2017/01/11 18:23:33 by rchoquer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,15 +53,15 @@ OK				=	$(C_OK)OK$(C_NO)
 
 .PHONY: clean all re fclean
 
-all: $(NAME)
+all: $(OBJ_PATH) $(NAME)
 
 $(NAME): $(OBJ)
+	@echo "Compiling & indexing" [ $(NAME) ] $(SUCCESS)
 	@ar rc $@ $^
 	@ranlib $@
-	@echo "Compiling & indexing" [ $(NAME) ] $(SUCCESS)
 
-$(OBJ_PATH)/%.o: $(SRC_PATH)/%.c $(OBJ_PATH)
-	@$(CC) -c $(CPPFLAGS) -o $@ $< $(CFLAGS)
+$(OBJ_PATH)/%.o: $(SRC_PATH)/%.c
+	@$(CC) -c $(CPPFLAGS) -o $@ $^ $(CFLAGS)
 
 $(OBJ_PATH):
 	@mkdir -p $(OBJ_PATH) 2> /dev/null
@@ -69,13 +69,13 @@ $(OBJ_PATH):
 clean:
 	@rm -f $(OBJ)
 	@rmdir $(OBJ_PATH) 2> /dev/null || true
+	@echo "Delete" [ $(NAME) ] $(OK)
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "Delete" [ $(NAME) ] $(OK)
 
 re: fclean all
 
 norme:
-	@norminette $(SRC)
-	@norminette $(INC)
+	@norminette $(SRC) | grep "Error"
+	@norminette $(INC) | grep "Error"
