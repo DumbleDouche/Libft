@@ -6,7 +6,7 @@
 /*   By: rchoquer <rchoquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 04:19:03 by rchoquer          #+#    #+#             */
-/*   Updated: 2017/01/12 01:57:28 by rchoquer         ###   ########.fr       */
+/*   Updated: 2017/01/12 18:16:46 by rchoquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,5 @@
 void	ft_putstr(char const *s)
 {
 	if (s)
-		while (*s)
-			ft_putchar(*s++);
+		write(1, s, ft_strlen(s));
 }
