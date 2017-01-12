@@ -6,11 +6,11 @@
 /*   By: rchoquer <rchoquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/08 00:31:41 by rchoquer          #+#    #+#             */
-/*   Updated: 2016/11/09 03:55:50 by rchoquer         ###   ########.fr       */
+/*   Updated: 2017/01/12 01:57:28 by rchoquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "../includes/libft.h"
 #include <stdlib.h>
 
 static size_t		ft_countw(const char *s, char c)

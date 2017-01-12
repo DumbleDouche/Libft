@@ -6,11 +6,11 @@
 /*   By: rchoquer <rchoquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 22:01:49 by rchoquer          #+#    #+#             */
-/*   Updated: 2016/11/15 20:00:02 by rchoquer         ###   ########.fr       */
+/*   Updated: 2017/01/12 01:57:28 by rchoquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "../includes/libft.h"
 
 char	*ft_strncpy(char *dest, const char *src, size_t n)
 {

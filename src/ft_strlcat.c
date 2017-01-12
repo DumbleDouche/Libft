@@ -6,11 +6,11 @@
 /*   By: rchoquer <rchoquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 17:34:32 by rchoquer          #+#    #+#             */
-/*   Updated: 2016/11/15 19:59:57 by rchoquer         ###   ########.fr       */
+/*   Updated: 2017/01/12 01:57:28 by rchoquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "../includes/libft.h"
 
 size_t		ft_strlcat(char *dest, const char *src, size_t n)
 {
