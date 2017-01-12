@@ -1,1 +1,0 @@
-Recoding C's standard library.
