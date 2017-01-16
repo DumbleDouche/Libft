@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_digits.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rchoquer <rchoquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/07 18:28:04 by rchoquer          #+#    #+#             */
-/*   Updated: 2017/01/16 20:54:44 by rchoquer         ###   ########.fr       */
+/*   Created: 2017/01/16 01:46:36 by rchoquer          #+#    #+#             */
+/*   Updated: 2017/01/16 22:09:49 by rchoquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "../includes/libft.h"
 
-void	ft_memdel(void **ap)
+size_t		ft_digits(long nbr)
 {
-	if (ap)
-	{
-		free(*ap);
-		*ap = 0;
-	}
+	int i;
+
+	i = 0;
+	if (nbr < 0 && ++i)
+		nbr = ABS(nbr);
+	while (nbr /= 10)
+		++i;
+	++i;
+	return (i);
 }

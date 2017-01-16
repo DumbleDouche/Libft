@@ -6,24 +6,12 @@
 /*   By: rchoquer <rchoquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 18:48:02 by rchoquer          #+#    #+#             */
-/*   Updated: 2017/01/12 01:57:28 by rchoquer         ###   ########.fr       */
+/*   Updated: 2017/01/16 02:38:03 by rchoquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 #include <stdlib.h>
-
-static size_t	ft_digits(long nbr)
-{
-	size_t	digits;
-
-	digits = 0;
-	if (nbr == 0)
-		return (0);
-	while (nbr /= 10)
-		digits++;
-	return (digits);
-}
 
 char			*ft_itoa(int n)
 {
@@ -32,19 +20,19 @@ char			*ft_itoa(int n)
 
 	v = n;
 	ret = NULL;
-	if (!(ret = (char *)malloc(((ft_digits(v) + (n < 0)) + 2))))
+	if (!(ret = (char *)malloc(((ft_digits(v)) + 1))))
 		return (NULL);
-	*(ret + ft_digits(v) + (n < 0) + 1) = '\0';
+	*(ret + ft_digits(v)) = '\0';
 	if (v < 0)
 	{
 		*ret = '-';
-		v *= -1;
+		v = ABS(v);
 	}
 	if (v == 0)
 		*ret = '0';
 	while (v)
 	{
-		*(ret + ft_digits(v) + (n < 0)) = (v % 10 + '0');
+		*(ret + ft_digits(v) + (n < 0) - 1) = (v % 10 + '0');
 		v /= 10;
 	}
 	return (ret);

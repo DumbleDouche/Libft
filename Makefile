@@ -6,7 +6,7 @@
 #    By: rchoquer <rchoquer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/05 04:09:13 by rchoquer          #+#    #+#              #
-#    Updated: 2017/01/11 19:47:14 by rchoquer         ###   ########.fr        #
+#    Updated: 2017/01/16 22:31:36 by rchoquer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ PROJECT			=	LIBFT
 
 CC				=	gcc
 CFLAGS			=	-Wall -Wextra -Werror
-CPPFLAGS		=	-Iinclude
+CPPFLAGS		=	-Iincludes
 
 SRC_NAME		=	ft_atoi.c		ft_putchar.c	ft_putstr.c		ft_putendl.c	ft_putnbr.c		\
 					ft_strcpy.c		ft_strcmp.c		ft_strlen.c		ft_strdup.c		ft_isalnum.c	\
@@ -29,13 +29,14 @@ SRC_NAME		=	ft_atoi.c		ft_putchar.c	ft_putstr.c		ft_putendl.c	ft_putnbr.c		\
 					ft_strnequ.c	ft_strsub.c		ft_strjoin.c	ft_strmap.c		ft_strmapi.c	\
 					ft_strtrim.c	ft_strsplit.c	ft_lstnew.c		ft_lstdelone.c	ft_lstdel.c		\
 					ft_lstadd.c		ft_lstiter.c	ft_lstmap.c		ft_lstlen.c 	ft_putnstr.c	\
-					
+					ft_digits.c		ft_memdelpp.c
+
 OBJ_NAME		=	$(SRC_NAME:.c=.o)
 INC_NAME		=	libft.h
 
 SRC_PATH		=	src
 OBJ_PATH		=	obj
-INC_PATH		=	include
+INC_PATH		=	includes
 
 SRC				=	$(addprefix $(SRC_PATH)/,$(SRC_NAME))
 OBJ				=	$(addprefix $(OBJ_PATH)/,$(OBJ_NAME))
@@ -48,7 +49,7 @@ all: $(OBJ_PATH) $(NAME)
 $(NAME): $(OBJ)
 	@ar rc $@ $^
 	@ranlib $@
-	@echo $(PROJECT) "\033[32mBuilt library\033[0m"
+	@echo $(PROJECT) "-" "\033[32mBuilt LIBFT\033[0m"
 
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c
 	@$(CC) $(CPPFLAGS) -o $@ -c $^ $(CFLAGS)
@@ -57,16 +58,17 @@ $(OBJ_PATH):
 	@mkdir -p $(OBJ_PATH) 2> /dev/null
 
 clean:
-	@rm -f $(OBJ)
-	@rmdir $(OBJ_PATH) 2> /dev/null || true
-	@echo $(PROJECT) "\033[93mCleaned up object files\033[0m"
+	@/bin/rm -f $(OBJ) 2> /dev/null
+	@/bin/rm -Rf $(OBJ_PATH) 2> /dev/null
+	@echo $(PROJECT) "-" "\033[33mCleaned up object files\033[0m"
 
 fclean: clean
-	@rm -f $(NAME)
-	@echo $(PROJECT) "\033[91mCleaned up compiled files\033[0m"
+	@/bin/rm -f $(NAME) 2> /dev/null
+	@echo $(PROJECT) "-" "\033[91mCleaned up compiled files\033[0m"
 
 re: fclean all
 
 norme:
-	@norminette $(SRC) | grep "Error"
-	@norminette $(INC) | grep "Error"
+	@echo $(PROJECT) "-" "\033[34mNORME\033[0m"
+	@norminette $(SRC)
+	@norminette $(INC)

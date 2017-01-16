@@ -6,13 +6,14 @@
 /*   By: rchoquer <rchoquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 04:08:10 by rchoquer          #+#    #+#             */
-/*   Updated: 2016/11/23 03:39:44 by rchoquer         ###   ########.fr       */
+/*   Updated: 2017/01/16 20:38:49 by rchoquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <string.h>
+# define ABS(x) (x < 0 ? -x : x)
 
 typedef struct		s_list
 {
@@ -40,6 +41,7 @@ void				ft_bzero(void *s, size_t n);
 void				ft_strdel(char **ap);
 void				ft_striter(char *s, void (*f)(char *));
 void				ft_memdel(void **ap);
+void				ft_memdelpp(void ***pp);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnstr(const char *string, size_t size);
 void				*ft_memcpy(void *str1, const void *str2, size_t n);
@@ -83,5 +85,6 @@ char				**ft_strsplit(char const *s, char c);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
 size_t				ft_strlen(const char *str);
 size_t				ft_lstlen(t_list *lst);
+size_t				ft_digits(long nbr);
 
 #endif

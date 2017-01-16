@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_memdelpp.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rchoquer <rchoquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/07 18:28:04 by rchoquer          #+#    #+#             */
-/*   Updated: 2017/01/16 20:54:44 by rchoquer         ###   ########.fr       */
+/*   Created: 2017/01/16 03:05:42 by rchoquer          #+#    #+#             */
+/*   Updated: 2017/01/16 22:08:04 by rchoquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "../includes/libft.h"
 
-void	ft_memdel(void **ap)
+void			ft_memdelpp(void ***pp)
 {
-	if (ap)
-	{
-		free(*ap);
-		*ap = 0;
-	}
+	int		i;
+
+	i = -1;
+	while ((*pp)[++i])
+		ft_memdel(&((*pp)[i]));
+	free(*pp);
+	*pp = 0;
 }
