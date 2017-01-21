@@ -6,7 +6,7 @@
 #    By: rchoquer <rchoquer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/05 04:09:13 by rchoquer          #+#    #+#              #
-#    Updated: 2017/01/16 22:31:36 by rchoquer         ###   ########.fr        #
+#    Updated: 2017/01/21 04:35:17 by rchoquer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ PROJECT			=	LIBFT
 
 CC				=	gcc
 CFLAGS			=	-Wall -Wextra -Werror
-CPPFLAGS		=	-Iincludes
+CPPFLAGS		=	-Iinclude
 
 SRC_NAME		=	ft_atoi.c		ft_putchar.c	ft_putstr.c		ft_putendl.c	ft_putnbr.c		\
 					ft_strcpy.c		ft_strcmp.c		ft_strlen.c		ft_strdup.c		ft_isalnum.c	\
@@ -36,7 +36,7 @@ INC_NAME		=	libft.h
 
 SRC_PATH		=	src
 OBJ_PATH		=	obj
-INC_PATH		=	includes
+INC_PATH		=	include
 
 SRC				=	$(addprefix $(SRC_PATH)/,$(SRC_NAME))
 OBJ				=	$(addprefix $(OBJ_PATH)/,$(OBJ_NAME))

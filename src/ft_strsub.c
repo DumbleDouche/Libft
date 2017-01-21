@@ -6,12 +6,12 @@
 /*   By: rchoquer <rchoquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/08 00:40:19 by rchoquer          #+#    #+#             */
-/*   Updated: 2017/01/12 01:57:28 by rchoquer         ###   ########.fr       */
+/*   Updated: 2017/01/21 04:35:17 by rchoquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "../includes/libft.h"
+#include "../include/libft.h"
 
 char		*ft_strsub(char const *s, unsigned int start, size_t len)
 {

@@ -6,11 +6,11 @@
 /*   By: rchoquer <rchoquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 21:35:00 by rchoquer          #+#    #+#             */
-/*   Updated: 2017/01/12 01:57:28 by rchoquer         ###   ########.fr       */
+/*   Updated: 2017/01/21 04:35:17 by rchoquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "../include/libft.h"
 
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {

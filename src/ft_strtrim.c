@@ -6,11 +6,11 @@
 /*   By: rchoquer <rchoquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/08 19:29:14 by rchoquer          #+#    #+#             */
-/*   Updated: 2017/01/12 01:57:28 by rchoquer         ###   ########.fr       */
+/*   Updated: 2017/01/21 04:35:17 by rchoquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "../include/libft.h"
 #include <stdlib.h>
 
 char	*ft_strtrim(char const *s)
